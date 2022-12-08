@@ -52,12 +52,13 @@ Inconvénient | Le gros désavantage des langages interprétés, c’est leur vi
 ## Complétez par des croix le tableau suivant traduisant le type correspondant
 
 Langage | compilé | interprété
+--- | --- | ---
 C (programmation système) | ✅ | ❌
 C++ (programmation système objet) | ✅ | ❌
 Cobol (gestion) | ✅ | ❌
 Fortran (calcul) | ✅ | ❌
 Java (programmation orientée web) | ✅ | ✅
-Matlab (calcul mathématique) | ❌ |
+Matlab (calcul mathématique) | ❌ | ✅
 LISP (intelligence artificielle) | ✅ | ✅
 PHP (développement de sites web dynamiques) | ❌ | ✅
 Perl (traitement de chaînes de caractères) | ❌ | ✅
