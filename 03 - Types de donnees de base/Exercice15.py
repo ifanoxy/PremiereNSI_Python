@@ -1,7 +1,7 @@
 # Écrivez un script qui recopie une chaîne (dans une nouvelle variable) en l’inversant.
 # Ainsi par exemple, « frivole » deviendra « elovirf ».
 
-phrase = "aeeyui"
+phrase = input('Entrez une phrase')
 newPhrase = ""
 
 for i in range(len(phrase)):
