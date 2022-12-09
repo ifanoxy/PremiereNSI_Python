@@ -63,4 +63,6 @@ class Tri:
 
         return " ".join(spaceTable)
 
-open('prenomTrié.txt', "w", encoding='utf-8').write(Tri.ordreAlphabetique(fichier))
+prenomTrie = Tri.ordreAlphabetique(fichier)
+
+open('prenomTrié.txt', "w", encoding='utf-8').write(prenomTrie)
