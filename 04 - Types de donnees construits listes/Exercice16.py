@@ -2,11 +2,9 @@
 # (l’utilisateur du programme doit pouvoir entrer une phrase de son choix). 
 
 phrase = input('Entrez la phrase de votre choix : ')
-
-mots = phrase.split()
 plusGrandMot = [0]
 
-for mot in mots:
+for mot in phrase.split():
     if len(mot) > plusGrandMot[0]:
         plusGrandMot = [len(mot), mot]
 
