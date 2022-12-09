@@ -2,10 +2,13 @@
 # (l’utilisateur du programme doit pouvoir entrer une phrase de son choix). 
 
 phrase = input('Entrez la phrase de votre choix : ')
-plusGrandMot = [0]
+plusGrandMot = [""]
 
 for mot in phrase.split():
-    if len(mot) > plusGrandMot[0]:
-        plusGrandMot = [len(mot), mot]
+    if len(mot) > len(plusGrandMot[0]):
+        plusGrandMot = [mot]
+        continue
+    if len(mot) == len(plusGrandMot[0]):
+        plusGrandMot.append(mot)
 
-print(plusGrandMot[1])
+print(f'Le(s) mot(s) le(s) plus long sont : {", ".join(plusGrandMot)}')
