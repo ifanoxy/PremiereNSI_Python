@@ -13,9 +13,9 @@ t3 = list()
 i = 0
 
 maxlen = [len(t1), len(t2)]
-maxlen.reverse()
+maxlen.sort()
 
-while i < maxlen[0]:
+while i < maxlen[-1]:
     t3.append(t2[i])
     t3.append(t1[i])
     i+=1
