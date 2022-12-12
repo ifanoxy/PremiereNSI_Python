@@ -4,8 +4,7 @@
 phrase = input('Entrez une phrase')
 newPhrase = ""
 
-for i in range(len(phrase)):
-    i += 1
+for i in range(1,len(phrase)+1):
     newPhrase += phrase[len(phrase)-i]
 
 print(newPhrase)
