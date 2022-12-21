@@ -5,7 +5,6 @@ i = 0
 
 print(f"{'|'.join(plateau[0:3])}\n---|---|---\n{'|'.join(plateau[3:6])}\n---|---|---\n{'|'.join(plateau[6:9])}")
 
-
 while end == False:
 	validReponse = False
 	if i%2 :
