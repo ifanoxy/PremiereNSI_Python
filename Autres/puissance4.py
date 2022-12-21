@@ -13,37 +13,29 @@ def checkWin(jeu, position, player):
     for condition in range(4):
         wincount = 0
         for i in range(1,4):
+            top = position-i*7
+            left = position-i
+            bottom = position+i*7
+            right = position+i
             match condition:
                 case 0:
-                    top = position-i*7
                     if top >= 0 and jeu[top] == player:
                         wincount +=1
-                    bottom = position+i*7
                     if bottom <= 41 and jeu[bottom] == player:
                         wincount +=1
                 case 1:
-                    left = position-i
                     if int(left/7) == int(position/7) and jeu[left] == player:
                         wincount +=1
-                    right = position+i
                     if int(right/7) == int(position/7) and jeu[right] == player:
                         wincount +=1
                 case 2:
-                    top = position-i*7
-                    left = position-i
                     if top >= 0 and int(left/7) == int(position/7) and jeu[top-i] == player:
                         wincount +=1
-                    bottom = position+i*7
-                    right = position+i
                     if bottom <= 41 and int(right/7) == int(position/7) and jeu[bottom+i] == player:
                         wincount +=1
                 case 3:
-                    top = position-i*7
-                    right = position+i
                     if  top >= 0 and int(right/7) == int(position/7) and jeu[top+i] == player:
                         wincount +=1
-                    bottom = position+i*7
-                    left = position-i
                     if bottom <= 41 and int(left/7) == int(position/7) and jeu[bottom-i] == player:
                         wincount +=1
         if wincount == 3:
@@ -81,13 +73,11 @@ for i in range(42):
             break
         jeu[play-1+7*n] = player
         position = play-1+7*n
-
     print(afficherJeu(jeu))
     end = checkWin(jeu, position, player)
     if end:
         winer = player
         break
-
 if winer == "personne":
     print("Il y a une égalitée parfaite !")
 else:
