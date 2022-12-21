@@ -5,8 +5,7 @@ winer = "personne"
 def afficherJeu(jeu):
     jeuAfficher = ""
     for c in range(6):
-        jeuAfficher += "".join(jeu[7*c:c*7+7])
-        jeuAfficher += "\n"
+        jeuAfficher += "".join(jeu[7*c:c*7+7]) + "\n"
     return jeuAfficher
 
 def checkWin(jeu, position, player):
@@ -54,8 +53,8 @@ def checkWin(jeu, position, player):
 
 print(afficherJeu(jeu))
 for i in range(42):
-    validReponse = False
-    while validReponse == False:
+    valideReponse = False
+    while valideReponse == False:
         if i%2:
             play = input("Les 🔴 c'est à vous de jouer, entrez un nombre de 1 à 7 : ")
             player = "🔴"
