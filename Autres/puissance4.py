@@ -1,6 +1,4 @@
-end = False
-jeu = ["⬛️"]*42
-winer = "personne"
+end, jeu, winer = False, ["⬛️"]*42, "personne"
 
 def afficherJeu(jeu):
     jeuAfficher = ""
@@ -13,10 +11,7 @@ def checkWin(jeu, position, player):
     for condition in range(4):
         wincount = 0
         for i in range(1,4):
-            top = position-i*7
-            left = position-i
-            bottom = position+i*7
-            right = position+i
+            top, left, bottom, right = position-i*7, position-i, position+i*7, position+i
             match condition:
                 case 0:
                     if top >= 0 and jeu[top] == player:
