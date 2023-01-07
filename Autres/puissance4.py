@@ -12,27 +12,26 @@ def checkWin(jeu, position, player):
         wincount = 0
         for i in range(1,4):
             top, left, bottom, right = position-i*7, position-i, position+i*7, position+i
-            match condition:
-                case 0:
-                    if top >= 0 and jeu[top] == player:
-                        wincount +=1
-                    if bottom <= 41 and jeu[bottom] == player:
-                        wincount +=1
-                case 1:
-                    if int(left/7) == int(position/7) and jeu[left] == player:
-                        wincount +=1
-                    if int(right/7) == int(position/7) and jeu[right] == player:
-                        wincount +=1
-                case 2:
-                    if top >= 0 and int(left/7) == int(position/7) and jeu[top-i] == player:
-                        wincount +=1
-                    if bottom <= 41 and int(right/7) == int(position/7) and jeu[bottom+i] == player:
-                        wincount +=1
-                case 3:
-                    if  top >= 0 and int(right/7) == int(position/7) and jeu[top+i] == player:
-                        wincount +=1
-                    if bottom <= 41 and int(left/7) == int(position/7) and jeu[bottom-i] == player:
-                        wincount +=1
+            if (condition == 1):
+                if top >= 0 and jeu[top] == player:
+                    wincount +=1
+                if bottom <= 41 and jeu[bottom] == player:
+                    wincount +=1
+            elif (condition == 2):
+                if int(left/7) == int(position/7) and jeu[left] == player:
+                    wincount +=1
+                if int(right/7) == int(position/7) and jeu[right] == player:
+                    wincount +=1
+            elif (condition == 3):
+                if top >= 0 and int(left/7) == int(position/7) and jeu[top-i] == player:
+                    wincount +=1
+                if bottom <= 41 and int(right/7) == int(position/7) and jeu[bottom+i] == player:
+                    wincount +=1
+            else:
+                if  top >= 0 and int(right/7) == int(position/7) and jeu[top+i] == player:
+                    wincount +=1
+                if bottom <= 41 and int(left/7) == int(position/7) and jeu[bottom-i] == player:
+                    wincount +=1
         if wincount == 3:
             win = True
             break
@@ -45,7 +44,7 @@ for i in range(42):
         if i%2:
             play = input("Les 🔴 c'est à vous de jouer, entrez un nombre de 1 à 7 : ")
             player = "🔴"
-        else: 
+        else:
             play = input("Les 🟡 c'est à vous de jouer, entrez un nombre de 1 à 7 : ")
             player = "🟡"
         try:
@@ -54,7 +53,7 @@ for i in range(42):
             print('Entrez un nombre !')
             continue
         if 0 <= play <= 7 and jeu[play-1] == "⬛️":
-            validReponse == True
+            validReponse = True
             break
         else :
             print("Réponse invalide !")
